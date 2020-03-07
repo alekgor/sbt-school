@@ -5,6 +5,8 @@ import java.util.TreeMap;
 
 public class Other {
 
+
+
     public static void main(String[] args) {
         LinkedHashMap<String,Integer> tableLinkedHashMap = new LinkedHashMap<>();
         tableLinkedHashMap.put("3",1);
@@ -15,5 +17,7 @@ public class Other {
         treeMap.put("3",1);
         treeMap.put("2",1);
         treeMap.put("5",1);
+
+
     }
 }
