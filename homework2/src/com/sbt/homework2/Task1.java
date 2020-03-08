@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+//Задание 1: Подсчитайте количество различных слов в файле.
 public class Task1 {
 
     public static void main(String[] args) throws FileNotFoundException {

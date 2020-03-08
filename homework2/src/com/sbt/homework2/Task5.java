@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
+//Задание 5: Реализуйте свой Iterator для обхода списка в обратном порядке.
 public class Task5 {
 
     public static class MyLinkedListWithReverseIterator extends LinkedList<Integer> {

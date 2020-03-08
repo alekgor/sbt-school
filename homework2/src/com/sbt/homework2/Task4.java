@@ -6,11 +6,13 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+//Задание 4: Выведите на экран все строки файла в обратном порядке.
 public class Task4 {
+
     public static void main(String[] args) throws FileNotFoundException {
         LinkedList<String> list = new LinkedList<>();
         try (Scanner in = new Scanner(new FileInputStream("src/com/sbt/homework2/ww.txt"), "windows-1251")) {
-            while (in.hasNextLine()){
+            while (in.hasNextLine()) {
                 list.add(in.nextLine());
             }
         }

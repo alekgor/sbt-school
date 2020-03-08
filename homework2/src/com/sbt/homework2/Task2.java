@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+//Задание 2: Выведите на экран список различных слов файла, отсортированный по возрастанию их длины
+// (компаратор сначала по длине слова, потом по тексту).
 public class Task2 {
 
     public static final Comparator<String> myLenComp = Comparator.comparingInt(String::length);

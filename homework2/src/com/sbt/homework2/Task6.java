@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+//Задание 6: Выведите на экран строки, номера которых задаются пользователем в произвольном порядке.
 public class Task6 {
 
     public static void main(String[] args) throws FileNotFoundException {
