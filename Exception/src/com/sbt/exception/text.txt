@@ -1,0 +1,7 @@
+Throwable не интерфейс
+ExceptionInInitializerError - signals that an unexpected exception has occurred in a static initializer.
+OutOfMemoryError -  JVM cannot allocate an object because it is out of memory, and no more memory could be made available by the GC.
+StackOverflowError - stack overflow occurs because an application recurses too deeply.
+InterruptedException - thrown when a thread is waiting, sleeping, or otherwise occupied, and the thread is interrupted, either before or during the activity.
+SQLException - provides information on a database access error or other errors.
+ClassNotFoundException - thrown when an application tries to load in a class through its string name but no definition for the class with the specified name could be found.
