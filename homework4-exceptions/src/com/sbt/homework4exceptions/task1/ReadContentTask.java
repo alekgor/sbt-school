@@ -1,4 +1,4 @@
-package com.sbt.homework4exceptions;
+package com.sbt.homework4exceptions.task1;
 
 import java.io.IOException;
 import java.net.URL;
