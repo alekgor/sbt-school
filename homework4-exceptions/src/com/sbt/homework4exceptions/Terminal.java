@@ -2,7 +2,7 @@ package com.sbt.homework4exceptions;
 
 
 public interface Terminal {
-    void check();
+    void checkBalance();
     void get();
     void put();
 }

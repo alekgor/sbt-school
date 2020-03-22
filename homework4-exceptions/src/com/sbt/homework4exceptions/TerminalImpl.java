@@ -25,7 +25,7 @@ public class TerminalImpl implements Terminal {
 
 
     @Override
-    public void check() { //    Проверка счета(Вывод баланса)
+    public void checkBalance() { //    Проверка счета(Вывод баланса)
         boolean accessToAccount = false;
         Integer balanceAccount = null;
 
@@ -82,6 +82,33 @@ public class TerminalImpl implements Terminal {
 
     @Override
     public void put() {
-
+        boolean accessToAccount = false;
+        while (!accessToAccount) {
+            System.out.println("Введите PIN для пополнения счета: ");
+            Scanner console = new Scanner(System.in);
+            String pin = console.nextLine();                   // Считываем пин
+            try {
+                accessToAccount = pinValidator.access(pin);   // Проверяем доступ по pin через валидатор
+            } catch (AccountIsLockedException | NonCorrectPinException e) {
+                System.out.println(e.getMessage());
+                continue;
+            }
+            if (accessToAccount) {  // Если есть доступ к аккаунту
+                boolean successOp = false;
+                while (!successOp) {
+                    try {
+                        System.out.println("Введите сумму для пополнения: ");
+                        Integer sum = console.nextInt();
+                        server.put(sum);             // Запрашиваем у сервера пополнение денег
+                        successOp = true;
+                    } catch (ServerException e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+            } else {
+                System.out.println("Неверный PIN");
+            }
+        }
+        System.out.println("Ваш баланс: " + server.getBalance() + server.getCurrency());
     }
 }

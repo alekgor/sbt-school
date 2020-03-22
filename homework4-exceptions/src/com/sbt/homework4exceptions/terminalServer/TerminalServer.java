@@ -28,4 +28,14 @@ public class TerminalServer {
         }
         this.balance -= sum;
     }
+
+    public void put(Integer sum) throws ServerException {
+        if (sum < 0) {
+            throw new NonPositiveSumException("Сумма снятия должна быть положительна.");
+        }
+        if (sum % 100 != 0) {
+            throw new NonMultipleOf100Exception("Сумма снятия должна быть кратна 100.");
+        }
+        this.balance += sum;
+    }
 }
