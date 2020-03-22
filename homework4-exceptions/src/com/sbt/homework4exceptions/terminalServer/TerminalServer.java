@@ -1,7 +1,7 @@
 package com.sbt.homework4exceptions.terminalServer;
 
 public class TerminalServer {
-    private Integer bankAccount;
+    private Integer balance;
     private String currency = "$";
 
     public String getCurrency() {
@@ -9,11 +9,23 @@ public class TerminalServer {
     }
 
     public TerminalServer() {
-        this.bankAccount = 10_000;
+        this.balance = 10_000;
     }
 
-    public Integer check(){
-        return bankAccount;
+    public Integer getBalance() {
+        return balance;
     }
 
+    public void get(Integer sum) throws ServerException {
+        if (sum < 0) {
+            throw new NonPositiveSumException("Сумма снятия должна быть положительна.");
+        }
+        if (balance - sum < 0) {
+            throw new InsufficientFundsException("Недостаточно средств на счете.");
+        }
+        if (sum % 100 != 0) {
+            throw new NonMultipleOf100Exception("Сумма снятия должна быть кратна 100.");
+        }
+        this.balance -= sum;
+    }
 }
