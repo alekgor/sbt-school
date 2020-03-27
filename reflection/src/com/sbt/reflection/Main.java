@@ -38,8 +38,7 @@ public class Main {
         myClass = null;
         try {
             Class clazz = Class.forName(MyClass.class.getName());
-            Class[] params = {int.class,String.class};
-            myClass = (MyClass) clazz.getConstructor(params).newInstance(1,"default2");
+            myClass = (MyClass) clazz.getConstructor(int.class,String.class).newInstance(1,"default2");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -59,7 +58,6 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
 
     }
 }
