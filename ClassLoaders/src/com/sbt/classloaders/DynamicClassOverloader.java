@@ -28,6 +28,8 @@ public class DynamicClassOverloader extends ClassLoader {
             System.out.println("% Class " + name + " found in cache");
             return result;
         }
+        if (name.toLowerCase().contains("truestatic"))
+            return findSystemClass(name);
         File f = findFile(name.replace('.', '/'), ".class");
 
         if (f == null) { // Если файла нет, то дилигируем задачу истемному загрузчику
