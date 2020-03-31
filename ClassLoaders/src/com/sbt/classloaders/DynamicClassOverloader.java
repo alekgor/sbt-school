@@ -25,6 +25,8 @@ public class DynamicClassOverloader extends ClassLoader {
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         Class result = classesHash.get(name);
         if (result != null) {
+            // Метод forName кеширует классы, поэтому classesHash пригодится
+            // если классы будут загружены через ClassLoader.loadClass(String name)
             System.out.println("% Class " + name + " found in cache");
             return result;
         }
