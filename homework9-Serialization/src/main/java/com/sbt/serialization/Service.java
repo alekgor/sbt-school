@@ -10,9 +10,10 @@ public interface Service {
     //    @Cache(cacheType = FILE, fileNamePrefix = "data", zip = true, identityBy = {String.class, double.class})
     List<String> run(String item, double value, Date date);
 
-    //    @Cache(cacheType = IN_MEMORY, listList = 100_000)
+    @Cache(type = CacheType.FILE, zip = true)
     int sum(int a, int b) throws InterruptedException;
 
+    @Cache(type = CacheType.IN_MEMORY, zip = true)
     String concat(String item1, String item2) throws InterruptedException;
 }
 

@@ -7,8 +7,9 @@ public class CacheProxy {
     public CacheProxy() {
     }
 
-    public <T> T cache(T t) {
-        Object o = Proxy.newProxyInstance(t.getClass().getClassLoader(), t.getClass().getInterfaces(), new CacheProxyInvocationHandler(t));
+    @SuppressWarnings("unchecked")
+    public <T> T cache(T t, String dirName) {
+        Object o = Proxy.newProxyInstance(t.getClass().getClassLoader(), t.getClass().getInterfaces(), new CacheProxyInvocationHandler(t, dirName));
         return (T) o;
     }
 }
