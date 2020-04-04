@@ -1,13 +1,6 @@
 package com.sbt.serialization;
 
-import java.util.Date;
-import java.util.List;
-
 public class ServiceImpl implements Service {
-    @Override
-    public List<String> run(String item, double value, Date date) {
-        return null;
-    }
 
     @Override
     public int sum(int a, int b) throws InterruptedException {

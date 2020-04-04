@@ -53,11 +53,7 @@ public class Serializer {
         boolean flag = false;
         try (ZipInputStream zin = new ZipInputStream(new FileInputStream(file))) {
             ZipEntry entry;
-            String name;
-            long size;
             while ((entry = zin.getNextEntry()) != null) {
-                name = entry.getName(); // получим название файла
-                size = entry.getSize();  // получим его размер в байтах
                 // распаковка
                 FileOutputStream fout = new FileOutputStream("save/del.bin");
                 for (int c = zin.read(); c != -1; c = zin.read()) {
@@ -69,7 +65,7 @@ public class Serializer {
                 flag = true;
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+//            System.out.println(ex.getMessage());
             return null;
         }
         return flag ? new File("save/del.bin") : null;
@@ -81,7 +77,7 @@ public class Serializer {
              ObjectInputStream in = new ObjectInputStream(fis)) {
             return in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+//            System.out.println(e.getMessage());
             return null;
         } finally {
             file.delete();
