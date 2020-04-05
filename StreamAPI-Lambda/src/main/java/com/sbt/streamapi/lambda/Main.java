@@ -1,6 +1,7 @@
-package com.sbt.streamapi;
+package com.sbt.streamapi.lambda;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -76,6 +77,11 @@ public class Main {
         // поставщик
         Supplier<String> supplier = () -> System.getProperties().toString(); // Выдает сво-ва системы
 
+
+        // ССЫЛКИ НА МЕТОДЫ
+        inventory.sort((Apple a, Apple b) -> a.getWeight().compareTo(b.getWeight()));
+        inventory.sort(Comparator.comparing(Apple::getWeight));
+        // Apple::getWeight - ссылка на метод
 
     }
 }

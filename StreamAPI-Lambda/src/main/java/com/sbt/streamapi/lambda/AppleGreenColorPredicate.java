@@ -1,4 +1,4 @@
-package com.sbt.streamapi;
+package com.sbt.streamapi.lambda;
 
 // До Java 8
 public class AppleGreenColorPredicate implements ApplePredicate {
