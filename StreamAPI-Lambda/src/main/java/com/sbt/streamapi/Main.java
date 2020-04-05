@@ -21,7 +21,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        List<Apple> inventory = new ArrayList<Apple>();
+        List<Apple> inventory = new ArrayList<>();
         inventory.add(new Apple(100, "green"));
         inventory.add(new Apple(110, "green"));
         inventory.add(new Apple(200, "green"));
@@ -75,9 +75,6 @@ public class Main {
 
         // поставщик
         Supplier<String> supplier = () -> System.getProperties().toString(); // Выдает сво-ва системы
-
-
-
 
 
     }
