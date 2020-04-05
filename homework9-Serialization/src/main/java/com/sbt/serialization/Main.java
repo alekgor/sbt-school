@@ -8,7 +8,7 @@ public class Main {
         System.out.println(new File(".").getAbsolutePath());
 
         CacheProxy cacheProxy = new CacheProxy();
-        Service s = cacheProxy.cache(new ServiceImpl(),"save");
+        Service s = cacheProxy.cache(new ServiceImpl(),"ServiceImplCache");
         s.sum(1,2);
         s.sum(1,3);
         s.sum(1,4);

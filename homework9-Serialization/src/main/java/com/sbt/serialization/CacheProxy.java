@@ -1,5 +1,7 @@
 package com.sbt.serialization;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Proxy;
 
 public class CacheProxy {

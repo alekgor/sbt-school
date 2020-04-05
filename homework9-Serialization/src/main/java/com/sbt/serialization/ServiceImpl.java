@@ -4,9 +4,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public int sum(int a, int b) throws InterruptedException {
-//        System.out.println("Service working ...");
         Thread.sleep(1000);
-//        System.out.println("Service finished...");
         return a + b;
     }
 

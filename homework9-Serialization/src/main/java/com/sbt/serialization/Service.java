@@ -6,7 +6,7 @@ public interface Service {
     @Cache(type = CacheType.FILE, zip = true)
     int sum(int a, int b) throws InterruptedException;
 
-    @Cache(type = CacheType.IN_MEMORY, zip = true)
+    @Cache(type = CacheType.FILE, zip = true)
     String concat(String item1, String item2) throws InterruptedException;
 }
 

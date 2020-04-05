@@ -7,10 +7,7 @@ import java.util.zip.ZipOutputStream;
 
 public class Serializer {
 
-    public static void serialize(File directory, Object o) throws IOException {
-        File file = new File(directory.getPath()
-                + File.separatorChar
-                + o.getClass().getSimpleName());
+    public static void serialize(File file, Object o) throws IOException {
         try (FileOutputStream fos = new FileOutputStream(file);
              ObjectOutputStream out = new ObjectOutputStream(fos)) {
             out.writeObject(o);
@@ -55,7 +52,7 @@ public class Serializer {
             ZipEntry entry;
             while ((entry = zin.getNextEntry()) != null) {
                 // распаковка
-                FileOutputStream fout = new FileOutputStream("save/del.bin");
+                FileOutputStream fout = new FileOutputStream("delete.bin");
                 for (int c = zin.read(); c != -1; c = zin.read()) {
                     fout.write(c);
                 }
@@ -68,7 +65,7 @@ public class Serializer {
 //            System.out.println(ex.getMessage());
             return null;
         }
-        return flag ? new File("save/del.bin") : null;
+        return flag ? new File("delete.bin") : null;
     }
 
 
