@@ -2,6 +2,7 @@ package com.sbt.homework10;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -9,12 +10,15 @@ public class Main {
 
     public static void main(String[] args) {
         Random random = new Random();
-        List<Integer> ints = new ArrayList<>();
-        ints = random.ints(0, 100).limit(100).boxed().collect(Collectors.toList());
+        List<Integer> ints = random.ints(0, 100).limit(100).boxed().collect(Collectors.toList());
+        Streams.of(ints).filter(x -> x < 50).transform(Object::toString).forEachPrint();
 
-        Streams<Integer> streams = Streams.of(ints);
-        streams.filter(x -> x < 50).transform(Object::toString).list.forEach(System.out::println);
-
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Person("Alex", 18));
+        personList.add(new Person("Bob", 14));
+        personList.add(new Person("Tom", 15));
+        personList.add(new Person("Pot", 16));
+        Map<String, Person> map = Streams.of(personList).toMap(Person::getName, person -> person);
     }
 }
 
