@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.LinkedList;
 
 
-public class FixedThreadPool implements ThreadPool, Runnable {
+public class FixedThreadPool implements ThreadPool{
     private ArrayDeque<Runnable> queueTask;
     private LinkedList<Thread> threads;
 
@@ -12,7 +12,7 @@ public class FixedThreadPool implements ThreadPool, Runnable {
         threads = new LinkedList<>();
         queueTask = new ArrayDeque<>();
         for (int i = 0; i < threadCount; i++) {
-            threads.add(new Thread(this));
+            threads.add(new Thread(FixedThreadPool.this::run));
         }
     }
 
@@ -39,7 +39,7 @@ public class FixedThreadPool implements ThreadPool, Runnable {
         }
     }
 
-    @Override
+
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
