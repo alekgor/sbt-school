@@ -1,0 +1,7 @@
+package com.sbt.homework.ExecutionManager;
+
+
+
+public interface ExecutionManager {
+    Context execute(Runnable callback, Runnable[] tasks);
+}
